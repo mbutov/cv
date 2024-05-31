@@ -15,7 +15,7 @@ link:https://github.com/mbutov[github.com/mbutov]
 
 == About Me
 
-Senior software architect with over 20 years of experience in creating efficient and innovative solutions based on Java/Open Source/Linux.
+Senior software architect with over 20 years of experience in creating efficient and innovative solutions based on Java{nbsp}/{nbsp}Open{nbsp}source{nbsp}/{nbsp}Linux.
 Involved in project management and the development of enterprise-level architecture.
 Expertise in security assurance, performance optimization, and scalable system development.
 Ready to take a leadership role in a development team.
