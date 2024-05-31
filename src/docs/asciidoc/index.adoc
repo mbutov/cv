@@ -1,5 +1,7 @@
 
-=== Maxim Butov
+=== Public CV
 
-* link:cv_maxim_butov_en.adoc[CV (en)]
-* link:cv_maxim_butov_en.adoc[CV (ru)]
+Maxim Butov
+
+* link:src/docs/asciidoc/cv_maxim_butov_en.adoc[English]
+* link:src/docs/asciidoc/cv_maxim_butov_ru.adoc[Russian]
