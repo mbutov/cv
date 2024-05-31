@@ -1,0 +1,61 @@
+plugins {
+    id 'org.asciidoctor.jvm.convert' version '3.3.2'
+    id 'org.asciidoctor.jvm.pdf' version '3.3.2'
+}
+
+repositories {
+    mavenCentral()
+}
+
+asciidoctor {
+    sourceDir = 'src/docs/asciidoc'
+
+    baseDirFollowsSourceDir()
+
+    sources {
+        include '**/*.adoc'
+    }
+
+    resources {
+        from('src/docs/asciidoc') {
+            include '**/*.png'
+        }
+    }
+
+    asciidoctorj {
+
+        options = [
+            // не работает генерация pdf, но работает отдельным таском 'asciidoctorPdf'
+            backends: ['html5', 'pdf']
+        ]
+
+        attributes = [
+            toclevels           : 4,
+            toc                 : 'left',
+            sectanchors         : 'true',
+            sectnums            : '',
+            sectnumlevels       : 5,
+            icons               : 'font',
+            'source-highlighter': 'coderay'
+        ]
+    }
+
+}
+
+asciidoctorPdf {
+    sourceDir = 'src/docs/asciidoc'
+
+    baseDirFollowsSourceDir()
+
+    sources {
+        include '**/*.adoc'
+    }
+
+    resources {
+        from('src/docs/asciidoc') {
+            include '**/*.png'
+        }
+    }
+}
+
+build.dependsOn asciidoctor, asciidoctorPdf

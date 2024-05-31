@@ -1,0 +1,132 @@
+= Maxim Butov
+
+image::maxim_butov_resized.png[Maxim Butov]
+
+link:mailto:mbutov@gmail.com[mbutov@gmail.com]
+
+link:https://github.com/mbutov[github.com/mbutov]
+
+== Profile
+
+* Software Architect
+* Lead Developer
+* Performance Optimization Engineer
+* Database Architect
+
+== About Me
+
+Senior software architect with over 20 years of experience in creating efficient and innovative solutions based on Java/Open Source/Linux.
+Involved in project management and the development of enterprise-level architecture.
+Expertise in security assurance, performance optimization, and scalable system development.
+Ready to take a leadership role in a development team.
+Experienced in conducting technical interviews.
+Capable of working effectively with both classical and agile development processes, focusing on client tasks and strictly adhering to deadlines.
+Throughout my professional career, my passion for programming and active involvement in development have never ceased.
+
+== Education
+
+Belarusian State University, Faculty of Applied Mathematics and Computer Science, link:https://bsu.by/en/structure/faculties/kafedry/kafedra-diskretnoy-matematiki-i-algoritmiki-d[Mathematician - System Programmer], 1996-2001.
+
+== Languages
+
+* Russian (native)
+* English (B1)
+
+== Skills and Technologies
+
+* **Theory:** Deep understanding of algorithms, data structures, and computer science fundamentals successfully integrated into practical development, ensuring the creation of efficient and optimized software solutions.
+* **Software Design:** Skills in designing fault-tolerant, scalable, and high-load systems, applying architectural patterns and principles.
+* **Programming Languages:** Java (as well as Groovy, Kotlin) -- primary language.
+* **Libraries, Frameworks, and Products:** Knowledge and experience with popular libraries and frameworks in the Java ecosystem as well as complementary products (__Apache Commons, Caffeine, GeoIP, gRPC/Protobuf, Gson, Guava, Hibernate, HikariCP (and other connection pools), Jackson, Jetty, JUnit, Kafka, Logback, Mockito, MySQL, Oracle Database, POI/jXLS, PostgreSQL, Project Reactor, Quartz, Redis (Jedis/Redisson), SLF4J, Spring Boot, Spring Framework (and Spring Projects), Spring Security, SQL Server, Thymeleaf, Tomcat, Wicket, Wildfly, etc.__).
+* **Build, Integration, and Delivery:** Practical experience in building and delivering projects, including modern tools for automating build, testing, and deployment, ensuring an efficient, reliable, and continuous software integration and delivery cycle.
+* **Database Design:** Development and optimization of database structures, experience with relational and NoSQL databases.
+* **SQL:** Deep knowledge and practical experience with SQL.
+* **Containers:** Experience with containerization, including Docker.
+* **Load Testing:** Development, execution, and analysis of load tests.
+* **Performance Optimization:** Ability to optimize application performance at various levels.
+* **Code Review:** Using metrics to evaluate code quality and make improvement decisions.
+* **Development Process Organization:** Managing the development process, implementing best software development practices.
+* **Interviewing:** Experience conducting technical interviews and evaluating candidate qualifications.
+* **Broad Knowledge Base:** Understanding of software development methodologies, principles and processes of testing, and DevOps practices.
+
+== Work Experience
+
+=== Auxilium Wealth Place, 04.2022 - 11.2023
+
+__
+link:https://www.auxiliumwealth.com[Auxilium Wealth Place] -- a technology platform designed for asset management and financial planning. It enables client managers and specialists to connect client needs with approved service providers, considering advisory regulations in different countries.
+__
+
+From a technological perspective, the system is a catalog of providers and their services.
+It includes a public part with search and filters, and an admin section for managing information.
+
+==== Responsibilities
+
+* Organizing project development, including planning, task allocation, and managing the development team.
+* Implementing the module structure and build process, ensuring ease of maintenance and scalability of the project.
+* Designing the database, including schema development, query optimization, and ensuring data reliability.
+* Fully implementing the module for migrating heterogeneous client data (databases, files) to the new database, including data normalization and ensuring data integrity.
+
+=== Internet and Mobile Banking for Raiffeisen Bank International Group, 07.2020 - 02.2022
+
+__
+link:https://www.rbinternational.com[Raiffeisen Bank International] -- one of the largest Austrian banking groups, a cooperative bank. Its headquarters are in Vienna. In addition to Austria, it operates in 14 other countries in Central and Eastern Europe, serving 17.2 million clients.
+__
+
+Within the project, an IT solution was developed for Raiffeisen Bank.
+We created a comprehensive system integrating the bank's online and mobile channels, a portal for private and corporate clients, integrated PFM logic, digital sales functionality, an administrative console, as well as security system integration and advanced reporting capabilities.
+
+==== Responsibilities
+
+* Developing the architecture of a monolithic application on the Java platform, considering project requirements and optimal integration with existing infrastructure.
+* Module templates, project build system, and delivery to the client.
+* Full implementation of the authentication/authorization module, including database design, considering security standards and strict performance requirements.
+* Integration with IBM MQ to ensure reliable and asynchronous data exchange within the system.
+* Developing mechanisms for failure detection and protection to ensure high availability of modules.
+
+=== Internet and Mobile Banking for Rosbank, 05.2019 - 10.2020
+
+__
+link:https://www.rosbank.ru[Rosbank PJSC] -- a Russian universal bank, the main shareholder of the bank is the Russian Group Interros. The headquarters is located in Moscow. Included by the Bank of Russia in the list of systemically important credit institutions.
+__
+
+The project involved the development of a new mobile application. The project provided access to key banking services for over 4 million individuals and legal entities from 70 regions of Russia through various channels, maintaining high security standards and credit ratings.
+
+==== Responsibilities
+
+* Participated in all stages of agile development, including conducting grooming sessions to detail requirements, sprint planning, actively participating in task estimation through planning poker methodology, ensuring high transparency and interaction within the development team.
+* Developed several microservices.
+* Developed a user chat module with customer support, including designing the API for the mobile application, the backend module, and designing the corresponding database.
+* Debugging and integrating the chat module with the Bank's CRM system.
+
+=== Internet and Mobile Banking for BNP Paribas, 07.2017 - 10.2019
+
+__
+link:http://www.bnpparibas.com[BNP Paribas] -- a French financial conglomerate. As of 2018, it ranks ninth among the largest banks in the world by assets. It is one of the globally systemically important banks.
+__
+
+The project involved creating a new internet banking solution for servicing private individuals (retail) and small and medium-sized corporate clients (separated into a distinct project) through web and mobile (iOS/Android) channels.
+
+==== Responsibilities
+
+* Developing the architecture of a monolithic application on the Java platform, considering project requirements and optimal integration with existing infrastructure.
+* Module templates, project build system, and delivery to the client.
+* Developing mechanisms for failure detection and protection to ensure high availability of modules.
+* Developing, executing, and analyzing load tests.
+
+=== Internet and Mobile Banking for Société Générale, 03.2014 - 08.2017
+
+__
+link:https://www.societegenerale.com[Société Générale] -- a French financial conglomerate. As of 2017, it was the third-largest bank in France and the 20th largest in the world by assets. It is one of the globally systemically important banks.
+__
+
+Mobile and web applications providing users access to the bank's core products, enabling payments and money transfers, obtaining account statements, etc.
+
+==== Responsibilities
+
+* Developing the architecture of a monolithic application on the Java platform, considering project requirements and optimal integration with existing infrastructure.
+* Interaction with Microsoft SQL Server for efficient data storage and management.
+* Implementing over 10 integration points with existing bank systems, considering the variety of protocols and communication channels.
+* Full implementation of a demo mode, providing guest users with access to all functional capabilities of the application without interacting with the bank's core systems.
+* Developing a subsystem for automatic scheduled payments.
+* Developing a proprietary system for incremental database backups, ensuring reliable and efficient data recovery when necessary.
