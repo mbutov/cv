@@ -23,6 +23,11 @@ link:https://github.com/mbutov[github.com/mbutov]
 Умею эффективно работать как по классическим, так и по гибким процессам разработки, фокусируя внимание на задачах заказчика и тщательно соблюдая установленные сроки.
 На протяжении всей профессиональной деятельности моё увлечение программированием и активное участие в разработке никогда не прекращались.
 
+Некоторые мои опен-сорс проекты:
+
+* https://github.com/sugar-cubes/sugar-cubes-cloner - Java deep cloning library
+* https://github.com/asdf-community/asdf-jetbrains - ASDF plugin for JetBrains products
+
 == Образование
 
 Белорусский государственный университет, Факультет прикладной математики и информатики, link:https://bsu.by/structure/faculties/kafedry/kafedra-diskretnoy-matematiki-i-algoritmiki-d[Математик - системный программист], 1996-2001 гг.
