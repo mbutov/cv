@@ -1,0 +1,50 @@
+# see https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml for reference
+name: Publish to GitHub Pages
+on:
+  push:
+    branches: [main, master]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'adopt'
+          cache: 'gradle'
+      - name: Gradle build
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: wrapper
+          arguments: clean build
+      - name: Upload Artifacts HTML
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: build/docs/asciidoc
+      - name: Upload Artifacts PDF
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: build/docs/asciidocPdf
+      - name: Upload Static HTML
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: src/docs/html
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
