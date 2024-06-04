@@ -1,4 +1,0 @@
-
-link:cv_maxim_butov_en.adoc[Maxim Butov CV (English)]
-
-link:cv_maxim_butov_ru.adoc[Maxim Butov CV (Russian)]
