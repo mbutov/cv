@@ -58,4 +58,17 @@ asciidoctorPdf {
     }
 }
 
-build.dependsOn asciidoctor, asciidoctorPdf
+tasks.named("build").configure {
+    dependsOn asciidoctor, asciidoctorPdf
+    doLast {
+        def targetDir = new File(buildDir, "site")
+        targetDir.mkdirs()
+        ant.copy(todir: targetDir) {
+            fileset(dir: asciidoctor.outputDir)
+            fileset(dir: asciidoctorPdf.outputDir)
+        }
+        ant.copy(todir: targetDir, overwrite: true) {
+            fileset(dir: file("src/docs/html"))
+        }
+    }
+}

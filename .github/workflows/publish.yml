@@ -33,18 +33,10 @@ jobs:
         with:
           gradle-version: wrapper
           arguments: clean build
-      - name: Upload Artifacts HTML
+      - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: build/docs/asciidoc
-      - name: Upload Artifacts PDF
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: build/docs/asciidocPdf
-      - name: Upload Static HTML
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: src/docs/html
+          path: build/site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
