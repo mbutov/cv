@@ -58,14 +58,14 @@ asciidoctorPdf {
     }
 }
 
-tasks.named("build").configure {
+tasks.register('copyToSite', Copy) {
     dependsOn asciidoctor, asciidoctorPdf
-    doLast {
-        copy {
-            from asciidoctor.outputDir
-            from asciidoctorPdf.outputDir
-            from file("src/docs/html")
-            into layout.buildDirectory.dir("site").get().asFile
-        }
-    }
+    from asciidoctor.outputDir
+    from asciidoctorPdf.outputDir
+    from 'src/docs/html'
+    into layout.buildDirectory.dir('site')
+}
+
+tasks.named('build') {
+    dependsOn copyToSite
 }
