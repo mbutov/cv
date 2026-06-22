@@ -2,24 +2,24 @@
 
 == English
 
-This repository contains the source files for the CV/resume of Maxim Butov — a Software Architect and Lead Developer with over 20 years of experience.
+This repository contains the source files for the CV/resume of Maxim Butov -- a Software Architect and Lead Developer.
 
 The CV is written in https://asciidoctor.org[AsciiDoc] and automatically built and published via GitHub Actions.
 
-- link:src/docs/asciidoc/cv_maxim_butov_en.adoc[Source (English)]
-- link:https://mbutov.github.io/cv/cv_maxim_butov_en.html[Published HTML]
-- link:https://mbutov.github.io/cv/cv_maxim_butov_en.pdf[Published PDF]
+* link:src/docs/asciidoc/cv_maxim_butov_en.adoc[Source (English)]
+* link:https://mbutov.github.io/cv/cv_maxim_butov_en.html[Published HTML]
+* link:https://mbutov.github.io/cv/cv_maxim_butov_en.pdf[Published PDF]
 
 == На русском
 
-В репозитории находятся исходные файлы резюме Максима Бутова — архитектора ПО и ведущего разработчика с опытом более 20 лет.
+В репозитории находятся исходные файлы резюме Максима Бутова -- архитектора ПО и ведущего разработчика.
 
 Резюме написано на https://asciidoctor.org[AsciiDoc], автоматически собирается и публикуется через GitHub Actions.
 
-- link:src/docs/asciidoc/cv_maxim_butov_ru.adoc[Исходник (русский)]
-- link:https://mbutov.github.io/cv/cv_maxim_butov_ru.html[Опубликованный HTML]
-- link:https://mbutov.github.io/cv/cv_maxim_butov_ru.pdf[Опубликованный PDF]
+* link:src/docs/asciidoc/cv_maxim_butov_ru.adoc[Исходник (русский)]
+* link:https://mbutov.github.io/cv/cv_maxim_butov_ru.html[Опубликованный HTML]
+* link:https://mbutov.github.io/cv/cv_maxim_butov_ru.pdf[Опубликованный PDF]
 
 == GitHub Pages
 
-Landing page: https://mbutov.github.io/cv/
+https://mbutov.github.io/cv/
