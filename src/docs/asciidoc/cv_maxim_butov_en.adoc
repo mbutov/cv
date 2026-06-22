@@ -35,7 +35,7 @@ Belarusian State University, Faculty of Applied Mathematics and Computer Science
 == Languages
 
 * Russian (native)
-* English (B1)
+* English (B2)
 
 == Skills and Technologies
 
@@ -56,7 +56,24 @@ Belarusian State University, Faculty of Applied Mathematics and Computer Science
 
 == Work Experience
 
-=== Auxilium Wealth Place, 04.2022 - 11.2023
+=== Private Investment Platform, 10.2025 - 03.2026
+
+__
+Investment platform for private capital, providing automated asset management and investor communication tools.
+__
+
+Development of a scalable backend for a fintech platform processing high volumes of investment transactions.
+Transition from a monolithic architecture to a microservices-based system.
+
+==== Responsibilities
+
+* Migrating parts of the monolith into separate microservices, designing gRPC APIs, and implementing resource-intensive services (video/image processing) with horizontal scaling support.
+* Setting up Quartz Scheduler in clustered mode for reliable distributed job execution.
+* Migrating selected functions (e.g., Google Analytics event dispatch) to asynchronous processing via Kafka.
+* Implementing inbound message processing with retry logic and outbound communication via the transactional outbox pattern.
+* Defining and documenting development and delivery workflows for the engineering team.
+
+=== Auxilium Wealth Place, 04.2022 - 11.2024
 
 __
 link:https://www.auxiliumwealth.com[Auxilium Wealth Place] -- a technology platform designed for asset management and financial planning. It enables client managers and specialists to connect client needs with approved service providers, considering advisory regulations in different countries.
