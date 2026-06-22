@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
       - name: Install asciidoctor
-        run: gem install asciidoctor
+        run: sudo gem install asciidoctor
       - name: Lint AsciiDoc
         uses: errata-ai/vale-action@v2
         with:
