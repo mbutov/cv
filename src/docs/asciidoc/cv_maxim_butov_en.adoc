@@ -63,19 +63,24 @@ link:https://www.komus.ru[Komus] is one of the largest Russian suppliers of offi
 The KETRN project moves the company's transport paperwork to electronic documents (waybills, carrier requests, forwarding receipts) via the state e-documents system by a regulatory deadline.
 __
 
-A microservices system built on Java 25, Spring Boot 4, Temporal, and Kafka that connects the company's ERP systems (SAP S/4HANA and an in-house ERP), the e-document operator (SBIS), and the digital signature service.
-Lead developer of the orchestrator service that selects the shipping scenario and drives the full document lifecycle of each order.
+A microservices system built on Java 25, Spring Boot 4, Temporal, and Kafka: an orchestrator, a document lifecycle service, an e-document operator adapter (SBIS), and adapters for the ERP systems (SAP S/4HANA and an in-house ERP).
+Production handles about 30,000 electronic waybills a day.
+Team lead and lead developer of the system.
 
 ==== Responsibilities
 
-* Designing and implementing the orchestrator on Temporal: shipment scenarios, two-leg transportation, and inbound deliveries, with a child workflow per document and handling of carrier and consignee signatures.
-* Evolving long-running processes safely: workflow versioning with patches and automated compatibility checks that replay production histories.
-* Integrating via Kafka with ERP adapters, the document lifecycle service, the e-document adapter, and the CryptoPro signing service with machine-readable powers of attorney: AsyncAPI contracts, bounded retries, a dead letter queue, and idempotent handling of repeated messages.
-* Building a single error code registry for the ERP systems and aligning alternative scenarios with business analysts.
-* Preparing and running production releases through GitLab CI and Argo CD: rollout and rollback plans, release order across dependent systems.
-* Production observability and support: OpenTelemetry tracing, Grafana metrics and dashboards, daily review of Loki logs and Temporal, support ticket analysis.
-* Code review across five microservices, service documentation, onboarding new developers, and handing over development to the team.
-* Using AI agents (Claude Code) for development, code review, production analysis, and project support.
+* Redesigning the orchestrator on Temporal: a parent order workflow with child document workflows, an explicit state machine with transition graph validation, hexagonal architecture with layer boundaries enforced by ArchUnit, typed workflow identifiers.
+* Transportation business scenarios: shipments by sole traders, carriers, and forwarders, two-leg transportation, and inbound deliveries; waiting for carrier and consignee signatures with a shared per-order deadline, partial rejections without stopping the order.
+* Compatibility of long-running processes that last for weeks in production: workflow versioning through a patch registry, a build gate that replays saved histories, rules for evolving workflow data.
+* Reliable Kafka processing: classifying errors as infrastructure or data failures, bounded exponential retries so a single failing message never blocks a partition, a dead letter queue, a guaranteed reply to the ERP, end-to-end request correlation across Kafka and Temporal.
+* Service contracts in AsyncAPI, OpenAPI, and JSON Schema, code generation with Gradle convention plugins, protocol compatibility checks between service versions.
+* Integrations: the partner directory (batched requests, caching, paging); the CryptoPro signing service with machine-readable powers of attorney, with concurrency and retry limits after an incident with a burst of API gateway rejections; the e-document operator, moved to a service pool to cut load on the external API.
+* A single error code registry for the ERP systems: the code comes from the step that failed, and the error text is separated from technical details.
+* Test infrastructure: Testcontainers (Temporal, Kafka, PostgreSQL), a Docker Compose environment, end-to-end tests with stubs of external systems and a scenario DSL, a web validator for ERP test orders (Spring MVC, Thymeleaf).
+* Code quality in CI: Spotless, Checkstyle, Error Prone with NullAway and JSpecify, ArchUnit, OpenRewrite; test run sped up fourfold.
+* Observability and operations: Temporal tracing with OpenTelemetry, Micrometer metrics and Grafana dashboards, log and trace analysis in Loki and Tempo, analysis of Temporal payload size limits and a worker scaling plan.
+* Leading development: planning tasks per release, code review across all services, rollout and rollback plans and production releases, incident analysis, working with business analysts, onboarding developers, and handing over development.
+* Using AI agents (Cursor, OpenCode, Claude Code) for development, code review, and production analysis.
 
 === Private Investment Platform, 10.2025 - 03.2026
 
