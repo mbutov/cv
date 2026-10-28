@@ -34,13 +34,11 @@ jobs:
         uses: actions/setup-java@v6
         with:
           java-version: 17
-          distribution: 'adopt'
-          cache: 'gradle'
+          distribution: 'temurin'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v5
       - name: Gradle build
-        uses: gradle/gradle-build-action@v3
-        with:
-          gradle-version: wrapper
-          arguments: clean build
+        run: ./gradlew clean build
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v5
         with:
