@@ -56,6 +56,27 @@ Belarusian State University, Faculty of Applied Mathematics and Computer Science
 
 == Work Experience
 
+=== Electronic Transport Documents for Komus (KETRN), 07.2026 - 10.2026
+
+__
+link:https://www.komus.ru[Komus] is one of the largest Russian suppliers of office and business goods, with its own logistics.
+The KETRN project moves the company's transport paperwork to electronic documents (waybills, carrier requests, forwarding receipts) via the state e-documents system by a regulatory deadline.
+__
+
+A microservices system built on Java 25, Spring Boot 4, Temporal, and Kafka that connects the company's ERP systems (SAP S/4HANA and an in-house ERP), the e-document operator (SBIS), and the digital signature service.
+Lead developer of the orchestrator service that selects the shipping scenario and drives the full document lifecycle of each order.
+
+==== Responsibilities
+
+* Designing and implementing the orchestrator on Temporal: shipment scenarios, two-leg transportation, and inbound deliveries, with a child workflow per document and handling of carrier and consignee signatures.
+* Evolving long-running processes safely: workflow versioning with patches and automated compatibility checks that replay production histories.
+* Integrating via Kafka with ERP adapters, the document lifecycle service, the e-document adapter, and the CryptoPro signing service with machine-readable powers of attorney: AsyncAPI contracts, bounded retries, a dead letter queue, and idempotent handling of repeated messages.
+* Building a single error code registry for the ERP systems and aligning alternative scenarios with business analysts.
+* Preparing and running production releases through GitLab CI and Argo CD: rollout and rollback plans, release order across dependent systems.
+* Production observability and support: OpenTelemetry tracing, Grafana metrics and dashboards, daily review of Loki logs and Temporal, support ticket analysis.
+* Code review across five microservices, service documentation, onboarding new developers, and handing over development to the team.
+* Using AI agents (Claude Code) for development, code review, production analysis, and project support.
+
 === Private Investment Platform, 10.2025 - 03.2026
 
 __
