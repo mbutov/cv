@@ -6,27 +6,152 @@ link:mailto:mbutov@gmail.com[mbutov@gmail.com]
 
 link:https://github.com/mbutov[github.com/mbutov]
 
-== Profile
+#(?) LinkedIn profile link#
 
-* Software Architect
-* Lead Developer
-* Performance Optimization Engineer
-* Database Architect
+Minsk, Belarus (UTC+3).
+Open to remote work on a B2B contract with overlap with EU working hours.
+#(?) Confirm location, work format, and preferred contract type#
 
-== About Me
+== Summary
 
-Senior software architect with over 20 years of experience in creating efficient and innovative solutions based on Java{nbsp}/{nbsp}Open{nbsp}source{nbsp}/{nbsp}Linux.
-Involved in project management and the development of enterprise-level architecture.
-Expertise in security assurance, performance optimization, and scalable system development.
-Ready to take a leadership role in a development team.
-Experienced in conducting technical interviews.
-Capable of working effectively with both classical and agile development processes, focusing on client tasks and strictly adhering to deadlines.
-Throughout my professional career, my passion for programming and active involvement in development have never ceased.
+Software architect and tech lead with over 20 years of Java backend development.
+Designed and led internet and mobile banking platforms for Societe Generale, BNP Paribas, and Raiffeisen Bank International.
+Currently leading a microservices system on Temporal and Kafka that processes about 30,000 electronic waybills a day.
+Uses AI coding agents daily for development, code review, and production analysis, and sets up agent workflows for development teams.
 
-Some of my open-source projects:
+== Key Strengths
 
-* https://github.com/sugar-cubes/sugar-cubes-cloner - Java deep cloning library
-* https://github.com/asdf-community/asdf-jetbrains - ASDF plugin for JetBrains products
+* **Architecture:** fault-tolerant, scalable, high-load Java systems, both microservices and modular monoliths; long-running workflows, messaging, and integration with core banking and ERP systems.
+* **Technical leadership:** release planning, code review across services, production releases and incident analysis, onboarding, and technical interviews.
+* **AI-assisted engineering:** Claude Code, Cursor, and OpenCode in daily work; shared agent rules and skills for the team; agent-driven code review and analysis of production logs and traces.
+#(?) Add one measurable result, for example review time or incident analysis time before and after#
+* **Performance:** load testing and optimization at the code, database, and JVM levels.
+#(?) Add one example with numbers, for example latency or throughput before and after#
+* **Security:** authentication and authorization modules for banks under strict security and performance requirements.
+
+== Skills and Technologies
+
+* **Languages:** Java (primary), Kotlin, Groovy, SQL.
+* **Frameworks:** Spring Boot, Spring Framework, Spring Security, Hibernate, Project Reactor, gRPC and Protobuf.
+* **Messaging and workflows:** Kafka, Temporal, IBM MQ, Quartz in clustered mode, transactional outbox.
+* **Databases:** PostgreSQL, Oracle Database, SQL Server, MySQL, Redis; schema design and query optimization.
+* **API contracts:** OpenAPI, AsyncAPI, JSON Schema, code generation, compatibility checks.
+* **Quality and testing:** JUnit, Mockito, Testcontainers, ArchUnit, Error Prone with NullAway, Checkstyle, Spotless, OpenRewrite, load testing.
+* **Observability:** OpenTelemetry, Micrometer, Grafana, Loki, Tempo.
+* **Build and infrastructure:** Gradle, Linux, Docker, Docker Compose, Ansible, CI/CD.
+#(?) Kubernetes and cloud platforms (AWS, Azure, GCP): add if you have experience#
+
+== Work Experience
+
+#(?) Employer and job title for these projects, for example IT services company and period#
+
+=== Electronic Transport Documents for a Large Retail and Logistics Company, 07.2026 - 10.2026
+
+#(?) For EU applications the client name is omitted. For other markets use: Komus, one of the largest Russian suppliers of office and business goods#
+
+Role: team lead and lead developer.
+Team: #(?) team size#.
+
+The project moves the company's transport paperwork (waybills, carrier requests, forwarding receipts) to electronic documents in the state e-document system by a regulatory deadline.
+The system consists of microservices on Java 25, Spring Boot 4, Temporal, and Kafka: an orchestrator, a document lifecycle service, an e-document operator adapter, and adapters for SAP S/4HANA and an in-house ERP.
+Production handles about 30,000 electronic waybills a day.
+
+* Redesigned the orchestrator on Temporal: a parent order workflow with child document workflows, an explicit state machine with transition graph validation, and hexagonal architecture with layer boundaries enforced by ArchUnit.
+* Implemented transportation scenarios: shipments by sole traders, carriers, and forwarders, two-leg transportation, inbound deliveries, signature waiting with a shared per-order deadline, and partial rejections without stopping the order.
+* Kept long-running processes compatible across releases: workflow versioning through a patch registry and a build gate that replays saved production histories.
+* Made Kafka processing reliable: infrastructure and data errors handled separately, bounded exponential retries so one failing message never blocks a partition, a dead letter queue, and end-to-end correlation across Kafka and Temporal.
+* Defined service contracts in AsyncAPI, OpenAPI, and JSON Schema with code generation and protocol compatibility checks in Gradle convention plugins.
+* Hardened integrations with the e-signature service and the e-document operator: concurrency and retry limits after an incident with API gateway rejections, a service pool to reduce load on the external API.
+* Built the test infrastructure: Testcontainers, a Docker Compose environment, and end-to-end tests with stubs of external systems and a scenario DSL.
+* Set up observability: Temporal tracing with OpenTelemetry, Micrometer metrics, Grafana dashboards, log and trace analysis in Loki and Tempo, a worker scaling plan.
+* Led development: release planning, code review across all services, rollout and rollback plans, incident analysis, work with business analysts, onboarding.
+* Used AI agents (Claude Code, Cursor, OpenCode) for development, code review, and production analysis.
+
+=== Private Investment Platform, 10.2025 - 03.2026
+
+Role: #(?) role#.
+Team: #(?) team size#.
+
+Backend of a fintech platform for private capital with automated asset management and investor communication.
+The project moved the platform from a monolith to microservices.
+
+* Extracted parts of the monolith into microservices with gRPC APIs; implemented resource-intensive video and image processing services with horizontal scaling.
+* Set up Quartz Scheduler in clustered mode for reliable distributed jobs.
+* Moved selected functions, such as analytics event dispatch, to asynchronous processing via Kafka.
+* Implemented inbound message processing with retries and outbound messages via the transactional outbox pattern.
+* Defined and documented the development and delivery workflow for the team.
+
+#(?) 11.2024 - 10.2025: explain this period in one line or correct the dates#
+
+=== Auxilium Wealth Place, 04.2022 - 11.2024
+
+Role: tech lead #(?) confirm#.
+Team: #(?) team size#.
+
+link:https://www.auxiliumwealth.com[Auxilium Wealth Place] is a platform for asset management and financial planning that connects client managers with approved service providers under advisory regulations of different countries.
+The system is a catalog of providers and services with a public search and an administration section.
+
+* Organized development: planning, task allocation, and team management.
+* Designed the module structure and the build process for long-term maintenance.
+* Designed the database schema and optimized queries.
+* Implemented the migration of heterogeneous client data from databases and files into the new database with normalization and integrity checks.
+
+=== Internet and Mobile Banking for Raiffeisen Bank International, 07.2020 - 02.2022
+
+Role: #(?) role, for example architect#.
+Scale: #(?) users, load, or number of countries served#.
+
+link:https://www.rbinternational.com[Raiffeisen Bank International] is one of the largest Austrian banking groups, operating in 14 countries of Central and Eastern Europe.
+The solution integrates the bank's online and mobile channels: a portal for private and corporate clients, personal finance management, digital sales, an administration console, and reporting.
+
+* Designed the architecture of the Java application and its integration with the bank's infrastructure; set up module templates, the build, and delivery to the client.
+* Implemented the authentication and authorization module, including the database design, under strict security and performance requirements.
+* Integrated with IBM MQ for reliable asynchronous data exchange.
+* Implemented failure detection and protection for high availability.
+
+=== Internet and Mobile Banking for Rosbank, 05.2019 - 10.2020
+
+#(?) The dates overlap with BNP Paribas and Raiffeisen: confirm the dates or note that the projects ran in parallel#
+
+Role: #(?) role#.
+
+Mobile banking for over 4 million individuals and companies in 70 regions.
+
+* Developed several microservices.
+* Designed and implemented the customer support chat: mobile API, backend module, database, and integration with the bank's CRM.
+
+=== Internet and Mobile Banking for BNP Paribas, 07.2017 - 10.2019
+
+Role: #(?) role#.
+Scale: #(?) users or load#.
+
+Internet banking for retail and small and medium business clients through web and mobile channels.
+
+* Designed the architecture of the Java application, set up the build and delivery to the client.
+* Implemented failure detection and protection for high availability.
+* Developed, ran, and analyzed load tests.
+#(?) Add the result of load testing or optimization in numbers#
+
+=== Internet and Mobile Banking for Societe Generale, 03.2014 - 08.2017
+
+Role: #(?) role#.
+Scale: #(?) users or load#.
+
+Web and mobile banking: payments, transfers, account statements.
+
+* Designed the architecture of the Java application on SQL Server.
+* Implemented over 10 integrations with the bank's systems over different protocols.
+* Implemented a full demo mode for guest users without access to the bank's core systems.
+* Developed scheduled automatic payments and an incremental database backup system.
+
+=== Earlier Experience, 2001 - 2014
+
+#(?) One or two lines: companies, roles, and main technologies#
+
+== Open Source
+
+* https://github.com/sugar-cubes/sugar-cubes-cloner[sugar-cubes-cloner] - a Java deep cloning library.
+* https://github.com/asdf-community/asdf-jetbrains[asdf-jetbrains] - an asdf plugin for JetBrains products.
 
 == Education
 
@@ -36,144 +161,3 @@ Belarusian State University, Faculty of Applied Mathematics and Computer Science
 
 * Russian (native)
 * English (B2)
-
-== Skills and Technologies
-
-* **Theory:** Deep understanding of algorithms, data structures, and computer science fundamentals successfully integrated into practical development, ensuring the creation of efficient and optimized software solutions.
-* **Software Design:** Skills in designing fault-tolerant, scalable, and high-load systems, applying architectural patterns and principles.
-* **Programming Languages:** Java (as well as Groovy, Kotlin) -- primary language.
-* **Libraries, Frameworks, and Products:** Knowledge and experience with popular libraries and frameworks in the Java ecosystem as well as complementary products (__Apache Commons, Caffeine, GeoIP, gRPC/Protobuf, Gson, Guava, Hibernate, HikariCP (and other connection pools), Jackson, Jetty, JUnit, Kafka, Logback, Mockito, MySQL, Oracle Database, POI/jXLS, PostgreSQL, Project Reactor, Quartz, Redis (Jedis/Redisson), SLF4J, Spring Boot, Spring Framework (and Spring Projects), Spring Security, SQL Server, Thymeleaf, Tomcat, Wicket, Wildfly, etc.__).
-* **Build, Integration, and Delivery:** Practical experience in building and delivering projects, including modern tools for automating build, testing, and deployment, ensuring an efficient, reliable, and continuous software integration and delivery cycle.
-* **Database Design:** Development and optimization of database structures, experience with relational and NoSQL databases.
-* **SQL:** Deep knowledge and practical experience with SQL.
-* **Containers:** Experience with containerization, including Docker.
-* **Load Testing:** Development, execution, and analysis of load tests.
-* **Performance Optimization:** Ability to optimize application performance at various levels.
-* **Code Review:** Using metrics to evaluate code quality and make improvement decisions.
-* **Development Process Organization:** Managing the development process, implementing best software development practices.
-* **Interviewing:** Experience conducting technical interviews and evaluating candidate qualifications.
-* **Broad Knowledge Base:** Understanding of software development methodologies, principles and processes of testing, and DevOps practices.
-
-== Work Experience
-
-=== Electronic Transport Documents for Komus (KETRN), 07.2026 - 10.2026
-
-__
-link:https://www.komus.ru[Komus] is one of the largest Russian suppliers of office and business goods, with its own logistics.
-The KETRN project moves the company's transport paperwork to electronic documents (waybills, carrier requests, forwarding receipts) via the state e-documents system by a regulatory deadline.
-__
-
-A microservices system built on Java 25, Spring Boot 4, Temporal, and Kafka: an orchestrator, a document lifecycle service, an e-document operator adapter (SBIS), and adapters for the ERP systems (SAP S/4HANA and an in-house ERP).
-Production handles about 30,000 electronic waybills a day.
-Team lead and lead developer of the system.
-
-==== Responsibilities
-
-* Redesigning the orchestrator on Temporal: a parent order workflow with child document workflows, an explicit state machine with transition graph validation, hexagonal architecture with layer boundaries enforced by ArchUnit, typed workflow identifiers.
-* Transportation business scenarios: shipments by sole traders, carriers, and forwarders, two-leg transportation, and inbound deliveries; waiting for carrier and consignee signatures with a shared per-order deadline, partial rejections without stopping the order.
-* Compatibility of long-running processes that last for weeks in production: workflow versioning through a patch registry, a build gate that replays saved histories, rules for evolving workflow data.
-* Reliable Kafka processing: classifying errors as infrastructure or data failures, bounded exponential retries so a single failing message never blocks a partition, a dead letter queue, a guaranteed reply to the ERP, end-to-end request correlation across Kafka and Temporal.
-* Service contracts in AsyncAPI, OpenAPI, and JSON Schema, code generation with Gradle convention plugins, protocol compatibility checks between service versions.
-* Integrations: the partner directory (batched requests, caching, paging); the CryptoPro signing service with machine-readable powers of attorney, with concurrency and retry limits after an incident with a burst of API gateway rejections; the e-document operator, moved to a service pool to cut load on the external API.
-* Test infrastructure: Testcontainers (Temporal, Kafka, PostgreSQL), a Docker Compose environment, end-to-end tests with stubs of external systems and a scenario DSL, a web validator for ERP test orders (Spring MVC, Thymeleaf).
-* Code quality in CI: Spotless, Checkstyle, Error Prone with NullAway and JSpecify, ArchUnit, OpenRewrite.
-* Observability and operations: Temporal tracing with OpenTelemetry, Micrometer metrics and Grafana dashboards, log and trace analysis in Loki and Tempo, analysis of Temporal payload size limits and a worker scaling plan.
-* Leading development: planning tasks per release, code review across all services, rollout and rollback plans and production releases, incident analysis, working with business analysts, and onboarding developers.
-* Using AI agents (Cursor, OpenCode, Claude Code) for development, code review, and production analysis.
-
-=== Private Investment Platform, 10.2025 - 03.2026
-
-__
-Investment platform for private capital, providing automated asset management and investor communication tools.
-__
-
-Development of a scalable backend for a fintech platform processing high volumes of investment transactions.
-Transition from a monolithic architecture to a microservices-based system.
-
-==== Responsibilities
-
-* Migrating parts of the monolith into separate microservices, designing gRPC APIs, and implementing resource-intensive services (video/image processing) with horizontal scaling support.
-* Setting up Quartz Scheduler in clustered mode for reliable distributed job execution.
-* Migrating selected functions (e.g., Google Analytics event dispatch) to asynchronous processing via Kafka.
-* Implementing inbound message processing with retry logic and outbound communication via the transactional outbox pattern.
-* Defining and documenting development and delivery workflows for the engineering team.
-
-=== Auxilium Wealth Place, 04.2022 - 11.2024
-
-__
-link:https://www.auxiliumwealth.com[Auxilium Wealth Place] -- a technology platform designed for asset management and financial planning. It enables client managers and specialists to connect client needs with approved service providers, considering advisory regulations in different countries.
-__
-
-From a technological perspective, the system is a catalog of providers and their services.
-It includes a public part with search and filters, and an admin section for managing information.
-
-==== Responsibilities
-
-* Organizing project development, including planning, task allocation, and managing the development team.
-* Implementing the module structure and build process, ensuring ease of maintenance and scalability of the project.
-* Designing the database, including schema development, query optimization, and ensuring data reliability.
-* Fully implementing the module for migrating heterogeneous client data (databases, files) to the new database, including data normalization and ensuring data integrity.
-
-=== Internet and Mobile Banking for Raiffeisen Bank International Group, 07.2020 - 02.2022
-
-__
-link:https://www.rbinternational.com[Raiffeisen Bank International] -- one of the largest Austrian banking groups, a cooperative bank. Its headquarters are in Vienna. In addition to Austria, it operates in 14 other countries in Central and Eastern Europe, serving 17.2 million clients.
-__
-
-Within the project, an IT solution was developed for Raiffeisen Bank.
-We created a comprehensive system integrating the bank's online and mobile channels, a portal for private and corporate clients, integrated PFM logic, digital sales functionality, an administrative console, as well as security system integration and advanced reporting capabilities.
-
-==== Responsibilities
-
-* Developing the architecture of a monolithic application on the Java platform, considering project requirements and optimal integration with existing infrastructure.
-* Module templates, project build system, and delivery to the client.
-* Full implementation of the authentication/authorization module, including database design, considering security standards and strict performance requirements.
-* Integration with IBM MQ to ensure reliable and asynchronous data exchange within the system.
-* Developing mechanisms for failure detection and protection to ensure high availability of modules.
-
-=== Internet and Mobile Banking for Rosbank, 05.2019 - 10.2020
-
-__
-link:https://www.rosbank.ru[Rosbank PJSC] -- a Russian universal bank, the main shareholder of the bank is the Russian Group Interros. The headquarters is located in Moscow. Included by the Bank of Russia in the list of systemically important credit institutions.
-__
-
-The project involved the development of a new mobile application. The project provided access to key banking services for over 4 million individuals and legal entities from 70 regions of Russia through various channels, maintaining high security standards and credit ratings.
-
-==== Responsibilities
-
-* Participated in all stages of agile development, including conducting grooming sessions to detail requirements, sprint planning, actively participating in task estimation through planning poker methodology, ensuring high transparency and interaction within the development team.
-* Developed several microservices.
-* Developed a user chat module with customer support, including designing the API for the mobile application, the backend module, and designing the corresponding database.
-* Debugging and integrating the chat module with the Bank's CRM system.
-
-=== Internet and Mobile Banking for BNP Paribas, 07.2017 - 10.2019
-
-__
-link:http://www.bnpparibas.com[BNP Paribas] -- a French financial conglomerate. As of 2018, it ranks ninth among the largest banks in the world by assets. It is one of the globally systemically important banks.
-__
-
-The project involved creating a new internet banking solution for servicing private individuals (retail) and small and medium-sized corporate clients (separated into a distinct project) through web and mobile (iOS/Android) channels.
-
-==== Responsibilities
-
-* Developing the architecture of a monolithic application on the Java platform, considering project requirements and optimal integration with existing infrastructure.
-* Module templates, project build system, and delivery to the client.
-* Developing mechanisms for failure detection and protection to ensure high availability of modules.
-* Developing, executing, and analyzing load tests.
-
-=== Internet and Mobile Banking for Société Générale, 03.2014 - 08.2017
-
-__
-link:https://www.societegenerale.com[Société Générale] -- a French financial conglomerate. As of 2017, it was the third-largest bank in France and the 20th largest in the world by assets. It is one of the globally systemically important banks.
-__
-
-Mobile and web applications providing users access to the bank's core products, enabling payments and money transfers, obtaining account statements, etc.
-
-==== Responsibilities
-
-* Developing the architecture of a monolithic application on the Java platform, considering project requirements and optimal integration with existing infrastructure.
-* Interaction with Microsoft SQL Server for efficient data storage and management.
-* Implementing over 10 integration points with existing bank systems, considering the variety of protocols and communication channels.
-* Full implementation of a demo mode, providing guest users with access to all functional capabilities of the application without interacting with the bank's core systems.
-* Developing a subsystem for automatic scheduled payments.
-* Developing a proprietary system for incremental database backups, ensuring reliable and efficient data recovery when necessary.
